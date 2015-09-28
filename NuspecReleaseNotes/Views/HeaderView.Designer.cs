@@ -30,7 +30,6 @@
         {
             this.SearchInfoLabel = new System.Windows.Forms.Label();
             this.FoundLabel = new System.Windows.Forms.Label();
-            this.CouldBeLoadedLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,25 +49,15 @@
             this.FoundLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoundLabel.Location = new System.Drawing.Point(4, 26);
             this.FoundLabel.Name = "FoundLabel";
-            this.FoundLabel.Size = new System.Drawing.Size(135, 13);
+            this.FoundLabel.Size = new System.Drawing.Size(269, 13);
             this.FoundLabel.TabIndex = 1;
-            this.FoundLabel.Text = "Found {0} nuspec files";
-            // 
-            // CouldBeLoadedLabel
-            // 
-            this.CouldBeLoadedLabel.AutoSize = true;
-            this.CouldBeLoadedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CouldBeLoadedLabel.Location = new System.Drawing.Point(4, 49);
-            this.CouldBeLoadedLabel.Name = "CouldBeLoadedLabel";
-            this.CouldBeLoadedLabel.Size = new System.Drawing.Size(119, 13);
-            this.CouldBeLoadedLabel.TabIndex = 2;
-            this.CouldBeLoadedLabel.Text = "{0} could be loaded";
+            this.FoundLabel.Text = "Found {0} nuspec files. {1} contains valid xml.";
             // 
             // SaveButton
             // 
             this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.Enabled = false;
-            this.SaveButton.Location = new System.Drawing.Point(187, 26);
+            this.SaveButton.Location = new System.Drawing.Point(179, 44);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(90, 23);
             this.SaveButton.TabIndex = 3;
@@ -80,7 +69,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.CouldBeLoadedLabel);
             this.Controls.Add(this.FoundLabel);
             this.Controls.Add(this.SearchInfoLabel);
             this.Name = "HeaderView";
@@ -94,7 +82,6 @@
 
         private System.Windows.Forms.Label SearchInfoLabel;
         private System.Windows.Forms.Label FoundLabel;
-        private System.Windows.Forms.Label CouldBeLoadedLabel;
         private System.Windows.Forms.Button SaveButton;
     }
 }

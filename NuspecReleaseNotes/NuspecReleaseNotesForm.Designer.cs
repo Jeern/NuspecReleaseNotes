@@ -28,8 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Line = new System.Windows.Forms.Panel();
             this.headerView1 = new NuspecReleaseNotes.Views.HeaderView();
             this.SuspendLayout();
+            // 
+            // Line
+            // 
+            this.Line.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Line.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Line.Location = new System.Drawing.Point(13, 82);
+            this.Line.Name = "Line";
+            this.Line.Size = new System.Drawing.Size(559, 2);
+            this.Line.TabIndex = 1;
             // 
             // headerView1
             // 
@@ -37,16 +48,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.headerView1.Location = new System.Drawing.Point(3, 4);
             this.headerView1.Name = "headerView1";
-            this.headerView1.Size = new System.Drawing.Size(442, 82);
+            this.headerView1.Size = new System.Drawing.Size(578, 82);
             this.headerView1.TabIndex = 0;
             // 
             // NuspecReleaseNotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 368);
+            this.ClientSize = new System.Drawing.Size(584, 368);
+            this.Controls.Add(this.Line);
             this.Controls.Add(this.headerView1);
             this.Name = "NuspecReleaseNotesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuspec release notes";
             this.ResumeLayout(false);
 
@@ -55,6 +68,7 @@
         #endregion
 
         private Views.HeaderView headerView1;
+        private System.Windows.Forms.Panel Line;
     }
 }
 
