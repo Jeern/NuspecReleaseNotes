@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using NuspecReleaseNotes.Models;
 using NuspecReleaseNotes.Util;
@@ -12,18 +14,37 @@ namespace NuspecReleaseNotes
         {
             Messenger.Register<List<NuspecFile>>(MessageNames.FilesLoaded, AddNuspecViews);
             InitializeComponent();
+            LoadFiles();
         }
+
+        public void LoadFiles()
+        {
+            string searchDirectory = Directory.GetCurrentDirectory();
+
+            var files = Directory.GetFiles(searchDirectory, "*.nuspec", SearchOption.AllDirectories);
+
+            var loadedDocs = files.Select(f => new NuspecFile(f, XDocLoader.Load(f))).Where(doc => doc.Doc != null).ToList();
+
+            Messenger.Send(MessageNames.MetadataLoaded, new Metadata
+            {
+                NumberOfFiles = files.Length,
+                Path = searchDirectory,
+                ValidXmlFiles = loadedDocs.Count
+            });
+            Messenger.Send(MessageNames.FilesLoaded, loadedDocs);
+        }
+
 
         private void AddNuspecViews(List<NuspecFile> files)
         {
-            //SuspendLayout();
+            SuspendLayout();
             int idx = 0;
             foreach (var file in files)
             {
                 AddNuspecView(file, idx);
                 idx += 1;
             }
-            //ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         private void AddNuspecView(NuspecFile file, int idx)
@@ -36,7 +57,7 @@ namespace NuspecReleaseNotes
                 Size = new System.Drawing.Size(559, 83),
                 TabIndex = idx + 2
             };
-            Controls.Add(nuspecView);
+            ContentPanel.Controls.Add(nuspecView);
         }
     }
 }

@@ -2,6 +2,7 @@
 {
     public enum MessageNames
     {
-        FilesLoaded
+        FilesLoaded,
+        MetadataLoaded
     }
 }

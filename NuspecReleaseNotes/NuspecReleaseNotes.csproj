@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Metadata.cs" />
     <Compile Include="Models\NuspecFile.cs" />
     <Compile Include="NuspecReleaseNotesForm.cs">
       <SubType>Form</SubType>
