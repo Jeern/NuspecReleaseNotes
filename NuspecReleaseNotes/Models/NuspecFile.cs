@@ -42,12 +42,7 @@ namespace NuspecReleaseNotes.Models
             else
             {
                 //We just add the element to the metadata element
-                XElement metadataElement = Doc?.Descendants("metadata").FirstOrDefault();
-                if (metadataElement != null)
-                {
-                    metadataElement.Add(new XElement("releaseNotes", ReleaseNotes));
-                }
-
+                Doc?.Descendants("metadata").FirstOrDefault()?.Add(new XElement("releaseNotes", ReleaseNotes));
             }
         }
     }
