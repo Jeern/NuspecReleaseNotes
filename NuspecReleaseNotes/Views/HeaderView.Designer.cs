@@ -66,8 +66,9 @@
             // 
             // SaveButton
             // 
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.Enabled = false;
-            this.SaveButton.Location = new System.Drawing.Point(178, 4);
+            this.SaveButton.Location = new System.Drawing.Point(187, 26);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(90, 23);
             this.SaveButton.TabIndex = 3;

@@ -33,9 +33,11 @@
             // 
             // headerView1
             // 
+            this.headerView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.headerView1.Location = new System.Drawing.Point(3, 4);
             this.headerView1.Name = "headerView1";
-            this.headerView1.Size = new System.Drawing.Size(275, 82);
+            this.headerView1.Size = new System.Drawing.Size(442, 82);
             this.headerView1.TabIndex = 0;
             // 
             // NuspecReleaseNotesForm
