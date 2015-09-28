@@ -14,29 +14,21 @@ namespace NuspecReleaseNotes.Views
         {
             InitializeComponent();
             _presenter = new NuspecPresenter(this, file);
-            Messenger.Register<string>(MessageNames.ReplaceAll, _presenter.Replace);
-            Messenger.Register<string>(MessageNames.PrefixAll, text => _presenter.Prefix(text, ReleaseNotesTextbox.Text));
-            Messenger.Register<string>(MessageNames.SuffixAll, text => _presenter.Suffix(text, ReleaseNotesTextbox.Text));
-        }
-
-        private bool IsNotChanged(string text)
-        {
-            return text.Equals(ReleaseNotesTextbox.Text);
         }
 
         private void ReplaceButton_Click(object sender, System.EventArgs e)
         {
-            Messenger.Send(MessageNames.ReplaceAll, ReleaseNotesTextbox.Text);
+            _presenter.ReplaceAll(ReleaseNotesTextbox.Text);
         }
 
         private void PrefixButton_Click(object sender, System.EventArgs e)
         {
-            Messenger.Send(MessageNames.PrefixAll, ReleaseNotesTextbox.Text);
+            _presenter.PrefixAll(ReleaseNotesTextbox.Text);
         }
 
         private void SuffixButton_Click(object sender, System.EventArgs e)
         {
-            Messenger.Send(MessageNames.SuffixAll, ReleaseNotesTextbox.Text);
+            _presenter.SuffixAll(ReleaseNotesTextbox.Text);
         }
 
         public void ShowPath(string path)
@@ -44,11 +36,8 @@ namespace NuspecReleaseNotes.Views
             PathLabel.Format(path);
         }
 
-        public void ShowReleaseNotes(string releaseNotes, string changedPart)
+        public void ShowReleaseNotes(string releaseNotes)
         {
-            if (IsNotChanged(changedPart))
-                return;
-
             ReleaseNotesTextbox.Text = releaseNotes;
         }
 
