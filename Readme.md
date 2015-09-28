@@ -4,7 +4,7 @@ it easy to edit them. Either for all files or for each one.
 
 ## Usage
 
-If as an example you have several nuspec files in 
+If you have several nuspec files in 
 your Visual Studio solution and want to edit your release notes before you 
 create and deploy your nuget packages. You just place NuspecReleaseNotes.exe in the root folder
 of your solution and run it.
