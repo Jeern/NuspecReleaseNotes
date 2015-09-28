@@ -19,6 +19,7 @@ namespace NuspecReleaseNotes.Presenters
             Messenger.Register<string>(MessageNames.PrefixAll, Prefix);
             Messenger.Register<string>(MessageNames.SuffixAll, Suffix);
             Messenger.Register(MessageNames.SaveChangedNotes, Save);
+            Messenger.Register(MessageNames.SaveChangedNotes, () => _view.ShowChangedLabel(false));
 
         }
 
@@ -78,6 +79,11 @@ namespace NuspecReleaseNotes.Presenters
         public void ChangeNote(string text)
         {
             _file.ReleaseNotes = text;
+            if (_file.Changed)
+            {
+                _view.ShowChangedLabel(true);
+            }
+
         }
     }
 }

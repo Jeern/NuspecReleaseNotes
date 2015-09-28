@@ -41,6 +41,11 @@ namespace NuspecReleaseNotes.Views
             ReleaseNotesTextbox.Text = releaseNotes;
         }
 
+        public void ShowChangedLabel(bool show)
+        {
+            ChangedLabel.Visible = show;
+        }
+
         private void ReleaseNotesTextbox_TextChanged(object sender, System.EventArgs e)
         {
             _presenter?.ChangeNote(ReleaseNotesTextbox.Text);

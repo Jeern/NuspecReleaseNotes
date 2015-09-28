@@ -33,6 +33,7 @@
             this.ReplaceButton = new System.Windows.Forms.Button();
             this.PrefixButton = new System.Windows.Forms.Button();
             this.SuffixButton = new System.Windows.Forms.Button();
+            this.ChangedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PathLabel
@@ -88,17 +89,30 @@
             this.SuffixButton.UseVisualStyleBackColor = true;
             this.SuffixButton.Click += new System.EventHandler(this.SuffixButton_Click);
             // 
+            // ChangedLabel
+            // 
+            this.ChangedLabel.AutoSize = true;
+            this.ChangedLabel.Font = new System.Drawing.Font("Calibri", 7F);
+            this.ChangedLabel.ForeColor = System.Drawing.Color.Red;
+            this.ChangedLabel.Location = new System.Drawing.Point(3, 68);
+            this.ChangedLabel.Name = "ChangedLabel";
+            this.ChangedLabel.Size = new System.Drawing.Size(42, 13);
+            this.ChangedLabel.TabIndex = 5;
+            this.ChangedLabel.Text = "Changed";
+            this.ChangedLabel.Visible = false;
+            // 
             // NuspecView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ChangedLabel);
             this.Controls.Add(this.SuffixButton);
             this.Controls.Add(this.PrefixButton);
             this.Controls.Add(this.ReplaceButton);
             this.Controls.Add(this.ReleaseNotesTextbox);
             this.Controls.Add(this.PathLabel);
             this.Name = "NuspecView";
-            this.Size = new System.Drawing.Size(598, 78);
+            this.Size = new System.Drawing.Size(598, 88);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +125,6 @@
         private System.Windows.Forms.Button ReplaceButton;
         private System.Windows.Forms.Button PrefixButton;
         private System.Windows.Forms.Button SuffixButton;
+        private System.Windows.Forms.Label ChangedLabel;
     }
 }

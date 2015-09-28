@@ -21,8 +21,11 @@ namespace NuspecReleaseNotes.Models
             get { return _releaseNotes; }
             set
             {
-                Changed = true;
-                _releaseNotes = value;
+                if (!value.Equals(ReleaseNotes))
+                {
+                    Changed = true;
+                    _releaseNotes = value;
+                }
             }
         }
 
