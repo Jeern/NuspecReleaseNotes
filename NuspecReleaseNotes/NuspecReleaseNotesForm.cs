@@ -52,7 +52,7 @@ namespace NuspecReleaseNotes
             var nuspecView = new NuspecView(file)
             {
                 Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
-                Location = new System.Drawing.Point(13, 93 + idx * 100),
+                Location = new System.Drawing.Point(13, 3 + idx * 100),
                 Name = $"nuspecView{idx}",
                 Size = new System.Drawing.Size(559, 83),
                 TabIndex = idx + 2

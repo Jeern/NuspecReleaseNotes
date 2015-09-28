@@ -48,7 +48,7 @@
             this.ReleaseNotesTextbox.Location = new System.Drawing.Point(6, 26);
             this.ReleaseNotesTextbox.Multiline = true;
             this.ReleaseNotesTextbox.Name = "ReleaseNotesTextbox";
-            this.ReleaseNotesTextbox.Size = new System.Drawing.Size(133, 39);
+            this.ReleaseNotesTextbox.Size = new System.Drawing.Size(88, 39);
             this.ReleaseNotesTextbox.TabIndex = 1;
             // 
             // NuspecView
