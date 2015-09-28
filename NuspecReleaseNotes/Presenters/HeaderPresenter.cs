@@ -23,10 +23,11 @@ namespace NuspecReleaseNotes.Presenters
 
             var files = Directory.GetFiles(searchDirectory, "*.nuspec", SearchOption.AllDirectories);
 
-            var loadedDocs = files.Select(f => new NuspecFile(f, XDocLoader.Load(f))).Where(doc => doc.Doc != null);
+            var loadedDocs = files.Select(f => new NuspecFile(f, XDocLoader.Load(f))).Where(doc => doc.Doc != null).ToList();
 
+            _view.SetLabels(searchDirectory, files.Length, loadedDocs.Count);
 
-            _view.SetLabels(searchDirectory, files.Length, loadedDocs.Count());
+            Messenger.Send(MessageNames.FilesLoaded, loadedDocs);
         }
     }
 }
