@@ -17,26 +17,8 @@ namespace NuspecReleaseNotes
         {
             InitializeComponent();
             _presenter = new MainPresenter(this);
-            LoadFiles();
+            _presenter.LoadFiles();
         }
-
-        public void LoadFiles()
-        {
-            string searchDirectory = Directory.GetCurrentDirectory();
-
-            var files = Directory.GetFiles(searchDirectory, "*.nuspec", SearchOption.AllDirectories);
-
-            var loadedDocs = files.Select(f => new NuspecFile(f, XDocLoader.Load(f))).Where(doc => doc.Doc != null).ToList();
-
-            Messenger.Send(MessageNames.MetadataLoaded, new Metadata
-            {
-                NumberOfFiles = files.Length,
-                Path = searchDirectory,
-                ValidXmlFiles = loadedDocs.Count
-            });
-            Messenger.Send(MessageNames.FilesLoaded, loadedDocs);
-        }
-
 
         public void AddNuspecViews(List<NuspecFile> files)
         {
