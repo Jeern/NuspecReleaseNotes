@@ -34,10 +34,20 @@ namespace NuspecReleaseNotes.Models
 
         public void MoveNoteToDoc()
         {
-            XElement element = Doc?.Descendants("releaseNotes").FirstOrDefault();
-            if (element != null)
+            XElement releaseNoteElement = Doc?.Descendants("releaseNotes").FirstOrDefault();
+            if (releaseNoteElement != null)
             {
-                element.Value = ReleaseNotes;
+                releaseNoteElement.Value = ReleaseNotes;
+            }
+            else
+            {
+                //We just add the element to the metadata element
+                XElement metadataElement = Doc?.Descendants("metadata").FirstOrDefault();
+                if (metadataElement != null)
+                {
+                    metadataElement.Add(new XElement("releaseNotes", ReleaseNotes));
+                }
+
             }
         }
     }
