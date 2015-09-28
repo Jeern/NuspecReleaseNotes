@@ -3,17 +3,20 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using NuspecReleaseNotes.Models;
+using NuspecReleaseNotes.Presenters;
 using NuspecReleaseNotes.Util;
 using NuspecReleaseNotes.Views;
+using NuspecReleaseNotes.Views.Interfaces;
 
 namespace NuspecReleaseNotes
 {
-    public partial class NuspecReleaseNotesForm : Form
+    public partial class NuspecReleaseNotesForm : Form, IMainView
     {
+        private readonly MainPresenter _presenter;
         public NuspecReleaseNotesForm()
         {
-            Messenger.Register<List<NuspecFile>>(MessageNames.FilesLoaded, AddNuspecViews);
             InitializeComponent();
+            _presenter = new MainPresenter(this);
             LoadFiles();
         }
 
@@ -35,7 +38,7 @@ namespace NuspecReleaseNotes
         }
 
 
-        private void AddNuspecViews(List<NuspecFile> files)
+        public void AddNuspecViews(List<NuspecFile> files)
         {
             SuspendLayout();
             int idx = 0;

@@ -55,6 +55,7 @@
       <DependentUpon>NuspecReleaseNotesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenters\HeaderPresenter.cs" />
+    <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\NuspecPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +70,7 @@
       <DependentUpon>HeaderView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Interfaces\IHeaderView.cs" />
+    <Compile Include="Views\Interfaces\IMainView.cs" />
     <Compile Include="Views\Interfaces\INuspecView.cs" />
     <Compile Include="Views\NuspecView.cs">
       <SubType>UserControl</SubType>
