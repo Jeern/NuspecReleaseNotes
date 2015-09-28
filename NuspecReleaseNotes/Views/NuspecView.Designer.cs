@@ -30,6 +30,9 @@
         {
             this.PathLabel = new System.Windows.Forms.Label();
             this.ReleaseNotesTextbox = new System.Windows.Forms.TextBox();
+            this.ReplaceButton = new System.Windows.Forms.Button();
+            this.PrefixButton = new System.Windows.Forms.Button();
+            this.SuffixButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PathLabel
@@ -48,17 +51,50 @@
             this.ReleaseNotesTextbox.Location = new System.Drawing.Point(6, 26);
             this.ReleaseNotesTextbox.Multiline = true;
             this.ReleaseNotesTextbox.Name = "ReleaseNotesTextbox";
-            this.ReleaseNotesTextbox.Size = new System.Drawing.Size(88, 39);
+            this.ReleaseNotesTextbox.Size = new System.Drawing.Size(309, 39);
             this.ReleaseNotesTextbox.TabIndex = 1;
+            // 
+            // ReplaceButton
+            // 
+            this.ReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReplaceButton.Location = new System.Drawing.Point(321, 26);
+            this.ReplaceButton.Name = "ReplaceButton";
+            this.ReplaceButton.Size = new System.Drawing.Size(75, 23);
+            this.ReplaceButton.TabIndex = 2;
+            this.ReplaceButton.Text = "&Replace all";
+            this.ReplaceButton.UseVisualStyleBackColor = true;
+            // 
+            // PrefixButton
+            // 
+            this.PrefixButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrefixButton.Location = new System.Drawing.Point(402, 26);
+            this.PrefixButton.Name = "PrefixButton";
+            this.PrefixButton.Size = new System.Drawing.Size(75, 23);
+            this.PrefixButton.TabIndex = 3;
+            this.PrefixButton.Text = "&Prefix all";
+            this.PrefixButton.UseVisualStyleBackColor = true;
+            // 
+            // SuffixButton
+            // 
+            this.SuffixButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SuffixButton.Location = new System.Drawing.Point(483, 26);
+            this.SuffixButton.Name = "SuffixButton";
+            this.SuffixButton.Size = new System.Drawing.Size(75, 23);
+            this.SuffixButton.TabIndex = 4;
+            this.SuffixButton.Text = "S&uffix all";
+            this.SuffixButton.UseVisualStyleBackColor = true;
             // 
             // NuspecView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SuffixButton);
+            this.Controls.Add(this.PrefixButton);
+            this.Controls.Add(this.ReplaceButton);
             this.Controls.Add(this.ReleaseNotesTextbox);
             this.Controls.Add(this.PathLabel);
             this.Name = "NuspecView";
-            this.Size = new System.Drawing.Size(150, 83);
+            this.Size = new System.Drawing.Size(598, 78);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,5 +104,8 @@
 
         private System.Windows.Forms.Label PathLabel;
         private System.Windows.Forms.TextBox ReleaseNotesTextbox;
+        private System.Windows.Forms.Button ReplaceButton;
+        private System.Windows.Forms.Button PrefixButton;
+        private System.Windows.Forms.Button SuffixButton;
     }
 }
