@@ -53,6 +53,7 @@
             this.ReleaseNotesTextbox.Name = "ReleaseNotesTextbox";
             this.ReleaseNotesTextbox.Size = new System.Drawing.Size(309, 39);
             this.ReleaseNotesTextbox.TabIndex = 1;
+            this.ReleaseNotesTextbox.TextChanged += new System.EventHandler(this.ReleaseNotesTextbox_TextChanged);
             // 
             // ReplaceButton
             // 

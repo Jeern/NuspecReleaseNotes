@@ -51,5 +51,10 @@ namespace NuspecReleaseNotes.Views
 
             ReleaseNotesTextbox.Text = releaseNotes;
         }
+
+        private void ReleaseNotesTextbox_TextChanged(object sender, System.EventArgs e)
+        {
+            Messenger.Send(MessageNames.ReleaseNoteChanged, ReleaseNotesTextbox.Text);
+        }
     }
 }

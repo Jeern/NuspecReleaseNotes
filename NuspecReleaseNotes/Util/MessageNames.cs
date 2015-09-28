@@ -3,9 +3,11 @@
     public enum MessageNames
     {
         FilesLoaded,
+        FinishedLoading,
         MetadataLoaded,
-        ReplaceAll,
         PrefixAll,
+        ReleaseNoteChanged,
+        ReplaceAll,
         SuffixAll
     }
 }
