@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
-using NuspecReleaseNotes.Models;
 using NuspecReleaseNotes.Presenters;
 using NuspecReleaseNotes.Util;
 using NuspecReleaseNotes.Views.Interfaces;

@@ -9,12 +9,9 @@ namespace NuspecReleaseNotes.Presenters
 {
     public class MainPresenter
     {
-        private readonly IMainView _view;
-
         public MainPresenter(IMainView view)
         {
-            _view = view;
-            Messenger.Register<List<NuspecFile>>(MessageNames.FilesLoaded, _view.AddNuspecViews);
+            Messenger.Register<List<NuspecFile>>(MessageNames.FilesLoaded, view.AddNuspecViews);
         }
 
         public void LoadFiles()
