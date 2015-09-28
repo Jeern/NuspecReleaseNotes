@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NuspecReleaseNotes
 {
-    public partial class Form1 : Form
+    public partial class NuspecReleaseNotesForm : Form
     {
-        public Form1()
+        public NuspecReleaseNotesForm()
         {
             InitializeComponent();
         }
