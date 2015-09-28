@@ -8,6 +8,7 @@
         PrefixAll,
         ReleaseNoteChanged,
         ReplaceAll,
+        SaveChangedNotes,
         SuffixAll
     }
 }

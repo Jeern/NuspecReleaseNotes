@@ -12,5 +12,10 @@ namespace NuspecReleaseNotes.Presenters
             Messenger.Register<string>(MessageNames.ReleaseNoteChanged, text => view.EnableSave());
             Messenger.Register(MessageNames.FinishedLoading, view.DisableSave);
         }
+
+        public void Save()
+        {
+            Messenger.Send(MessageNames.SaveChangedNotes);
+        }
     }
 }

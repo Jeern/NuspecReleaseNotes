@@ -43,6 +43,7 @@ namespace NuspecReleaseNotes.Views
 
         private void ReleaseNotesTextbox_TextChanged(object sender, System.EventArgs e)
         {
+            _presenter?.ChangeNote(ReleaseNotesTextbox.Text);
             Messenger.Send(MessageNames.ReleaseNoteChanged, ReleaseNotesTextbox.Text);
         }
     }

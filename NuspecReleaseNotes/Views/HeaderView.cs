@@ -33,5 +33,11 @@ namespace NuspecReleaseNotes.Views
         {
             SaveButton.Enabled = false;
         }
+
+        private void SaveButton_Click(object sender, System.EventArgs e)
+        {
+            _presenter.Save();
+            DisableSave();
+        }
     }
 }

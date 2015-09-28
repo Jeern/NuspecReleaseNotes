@@ -11,8 +11,7 @@ namespace NuspecReleaseNotes.Models
         {
             Doc = doc;
             Path = path;
-            ReleaseNotes = doc?.Descendants("releaseNotes").FirstOrDefault()?.Value;
-            Changed = false;
+            _releaseNotes = doc?.Descendants("releaseNotes").FirstOrDefault()?.Value;
         }
 
         public string Path { get;  }
@@ -30,5 +29,13 @@ namespace NuspecReleaseNotes.Models
         public XDocument Doc { get; }
         public bool Changed { get; private set; }
 
+        public void MoveNoteToDoc()
+        {
+            XElement element = Doc?.Descendants("releaseNotes").FirstOrDefault();
+            if (element != null)
+            {
+                element.Value = ReleaseNotes;
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace NuspecReleaseNotes.Presenters
             Messenger.Register<string>(MessageNames.ReplaceAll, Replace);
             Messenger.Register<string>(MessageNames.PrefixAll, Prefix);
             Messenger.Register<string>(MessageNames.SuffixAll, Suffix);
+            Messenger.Register(MessageNames.SaveChangedNotes, Save);
 
         }
 
@@ -42,14 +43,14 @@ namespace NuspecReleaseNotes.Presenters
             if(IsNotChanged(text))
                 return;
 
-            SetText(text);
+            _view.ShowReleaseNotes(text);
         }
         private void Prefix(string text)
         {
             if (IsNotChanged(text))
                 return;
 
-            SetText(text + _file.ReleaseNotes);
+            _view.ShowReleaseNotes(text + _file.ReleaseNotes);
         }
 
         private void Suffix(string text)
@@ -57,18 +58,26 @@ namespace NuspecReleaseNotes.Presenters
             if (IsNotChanged(text))
                 return;
 
-            SetText(_file.ReleaseNotes + text);
-        }
-
-        private void SetText(string text)
-        {
-            _file.ReleaseNotes = text;
-            _view.ShowReleaseNotes(text);
+            _view.ShowReleaseNotes(_file.ReleaseNotes + text);
         }
 
         private bool IsNotChanged(string text)
         {
             return text.Equals(_file.ReleaseNotes);
+        }
+
+        private void Save()
+        {
+            if (_file.Changed)
+            {
+                _file.MoveNoteToDoc();
+                _file.Doc.Save(_file.Path);
+            }
+        }
+
+        public void ChangeNote(string text)
+        {
+            _file.ReleaseNotes = text;
         }
     }
 }
