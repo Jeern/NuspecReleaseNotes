@@ -1,4 +1,9 @@
-﻿using NuspecReleaseNotes.Views.Interfaces;
+﻿using System.IO;
+using System.Linq;
+using System.Xml.Linq;
+using NuspecReleaseNotes.Models;
+using NuspecReleaseNotes.Util;
+using NuspecReleaseNotes.Views.Interfaces;
 
 namespace NuspecReleaseNotes.Presenters
 {
@@ -12,5 +17,16 @@ namespace NuspecReleaseNotes.Presenters
         }
 
 
+        public void LoadFiles()
+        {
+            string searchDirectory = Directory.GetCurrentDirectory();
+
+            var files = Directory.GetFiles(searchDirectory, "*.nuspec", SearchOption.AllDirectories);
+
+            var loadedDocs = files.Select(f => new NuspecFile(f, XDocLoader.Load(f))).Where(doc => doc.Doc != null);
+
+
+            _view.SetLabels(searchDirectory, files.Length, loadedDocs.Count());
+        }
     }
 }

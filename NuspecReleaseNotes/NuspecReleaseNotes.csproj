@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\NuspecFile.cs" />
     <Compile Include="NuspecReleaseNotesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +56,8 @@
     <Compile Include="Presenters\HeaderPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\XDocLoader.cs" />
+    <Compile Include="Util\Extensions.cs" />
     <Compile Include="Views\HeaderView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,9 +94,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
