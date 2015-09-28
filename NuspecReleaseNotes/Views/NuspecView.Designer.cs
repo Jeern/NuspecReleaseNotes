@@ -63,6 +63,7 @@
             this.ReplaceButton.TabIndex = 2;
             this.ReplaceButton.Text = "&Replace all";
             this.ReplaceButton.UseVisualStyleBackColor = true;
+            this.ReplaceButton.Click += new System.EventHandler(this.ReplaceButton_Click);
             // 
             // PrefixButton
             // 
@@ -73,6 +74,7 @@
             this.PrefixButton.TabIndex = 3;
             this.PrefixButton.Text = "&Prefix all";
             this.PrefixButton.UseVisualStyleBackColor = true;
+            this.PrefixButton.Click += new System.EventHandler(this.PrefixButton_Click);
             // 
             // SuffixButton
             // 
@@ -83,6 +85,7 @@
             this.SuffixButton.TabIndex = 4;
             this.SuffixButton.Text = "S&uffix all";
             this.SuffixButton.UseVisualStyleBackColor = true;
+            this.SuffixButton.Click += new System.EventHandler(this.SuffixButton_Click);
             // 
             // NuspecView
             // 
