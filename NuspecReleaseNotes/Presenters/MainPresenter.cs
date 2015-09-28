@@ -32,6 +32,7 @@ namespace NuspecReleaseNotes.Presenters
                 ValidXmlFiles = loadedDocs.Count
             });
             Messenger.Send(MessageNames.FilesLoaded, loadedDocs);
+            Messenger.Send(MessageNames.FinishedLoading);
         }
     }
 }

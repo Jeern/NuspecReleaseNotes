@@ -3,6 +3,7 @@
     public interface IHeaderView
     {
         void SetLabels(string searchDirectory, int numberOfFiles, int couldBeLoaded);
-        void EnableSave(bool enable);
+        void EnableSave();
+        void DisableSave();
     }
 }

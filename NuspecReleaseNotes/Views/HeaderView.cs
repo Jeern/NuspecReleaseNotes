@@ -25,9 +25,14 @@ namespace NuspecReleaseNotes.Views
             FoundLabel.Format(numberOfFiles, numberOfFiles == validXml ? "All" : validXml.ToString());
         }
 
-        public void EnableSave(bool enable)
+        public void EnableSave()
         {
-            SaveButton.Enabled = enable;
+            SaveButton.Enabled = true;
+        }
+
+        public void DisableSave()
+        {
+            SaveButton.Enabled = false;
         }
     }
 }
